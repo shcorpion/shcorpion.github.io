@@ -5,3 +5,18 @@ html {
   padding: 10px;
   text-align: center;
 }
+
+@media only screen and (max-width: 1200px) {
+  header nav{
+    display:none;
+ }
+ section{
+    padding: 0 15px;
+ }
+ section h3{
+    font-size: 25px;
+ }
+ section p{
+    font-size: 15px;
+ }
+}
