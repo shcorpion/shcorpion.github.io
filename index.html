@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MastersOfBunkers - Приложения для жизни</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -106,14 +107,27 @@
         .app-icon {
             width: 60px;
             height: 60px;
-            background: #4a5568;
             border-radius: 12px;
             margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+         .loan-icon {
+            background-image: url('images/loan-icon.png');
+        }
+        
+        .deposit-icon {
+            background-image: url('images/deposit-icon.png');
+        }
+        
+        .fortune-icon {
+            background-image: url('images/fortune-icon.png');
+        }
+        
+        .timeline-icon {
+            background-image: url('images/timeline-icon.png');
         }
         
         .app-title {
@@ -221,8 +235,18 @@
         }
         
         .highlight {
-            color: #ffd700;
+            color: #079D4D;
             font-weight: bold;
+        }
+
+        .castle-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background-image: url('images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
@@ -236,7 +260,7 @@
         <div class="main-content">
             <div class="card">
                 <h2>Наша история</h2>
-                <p>Приложение «Кредитный калькулятор», релиз которого состоялся в 2015 году, произвело революцию в категории "кредитный калькулятор" в Google Play. Именно тогда у нас появилась идея перейти к отдельным удобным приложениям, которые в конечном итоге приведут к повышению качества жизни наших пользователей.</p>
+                <p>Приложение «Кредитный калькулятор», релиз которого состоялся в 2015 году, произвело революцию в категории "Финансовые инструменты" в Google Play. Именно тогда у нас появилась идея перейти к отдельным удобным приложениям, которые в конечном итоге приведут к повышению качества жизни наших пользователей.</p>
                 
                 <p>Наша команда без устали трудилась над воплощением этой концепции. Специалисты тщательно прорабатывали детали приложения, чтобы дать пользователям именно то, чего они всегда хотели — <span class="highlight">возможность делать все на ходу</span>.</p>
                 
@@ -247,31 +271,31 @@
                 <h2>Наши приложения</h2>
                 <div class="apps-grid">
                     <div class="app-card">
-                        <div class="app-icon">%</div>
+                        <div class="app-icon loan-icon"></div>
                         <div class="app-title">Кредитный Калькулятор</div>
                         <div class="app-description">Самый лёгкий простой и удобный, более 1М загрузок!</div>
-                        <a href="https://https://play.google.com/store/apps/details?id=ru.mob.crca" class="btn">Скачать</a>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.crca" class="btn">Скачать</a>
                     </div>
                     
                     <div class="app-card">
-                        <div class="app-icon">$</div>
+                        <div class="app-icon deposit-icon"></div>
                         <div class="app-title">Калькулятор Вкладов</div>
                         <div class="app-description">Расчет доходности по вкладам!</div>
-                        <a href="https://https://play.google.com/store/apps/details?id=ru.mob.dps" class="btn">Скачать</a>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.dps" class="btn">Скачать</a>
                     </div>
                     
                     <div class="app-card">
-                        <div class="app-icon">🔮</div>
+                        <div class="app-icon fortune-icon"></div>
                         <div class="app-title">Гадания Онлайн</div>
                         <div class="app-description">Предсказания и гадания на каждый день!</div>
-                        <a href="https://https://play.google.com/store/apps/details?id=ru.mob.fortuneteller" class="btn">Скачать</a>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.fortuneteller" class="btn">Скачать</a>
                     </div>
                     
                     <div class="app-card">
-                        <div class="app-icon">⏱️</div>
+                        <div class="app-icon timeline-icon"></div>
                         <div class="app-title">TimeLine</div>
                         <div class="app-description">Знаменитая игра теперь в смартфоне!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.timeline" class="btn">Скачать</a>
+                        <a href="play.google.com/store/apps/details?id=ru.mob.timeline" class="btn">Скачать</a>
                     </div>
                 </div>
             </div>
