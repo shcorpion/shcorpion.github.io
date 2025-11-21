@@ -44,16 +44,10 @@
         }
         
         .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 30px;
             margin-bottom: 40px;
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
         }
         
         .card {
@@ -84,14 +78,14 @@
             margin-bottom: 15px;
         }
         
-        .apps-grid {
+        .apps-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-        
-        .app-card {
+
+        .compact-app-card {
             background: #f7fafc;
             border-radius: 8px;
             padding: 15px;
@@ -101,17 +95,17 @@
             flex-direction: column;
             height: 100%;
         }
-        
-        .app-card:hover {
+
+        .compact-app-card:hover {
             background: #edf2f7;
-            transform: scale(1.03);
+            transform: translateY(-3px);
         }
-        
-        .app-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            margin: 0 auto 10px;
+
+        .compact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            margin: 0 auto 8px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -137,36 +131,36 @@
         .dreamdecoder-icon {
             background-image: url('images/dreamdecoder-icon.png');
         }
-        
-        .app-title {
+
+        .compact-title {
             font-weight: bold;
             margin-bottom: 5px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .compact-description {
+            font-size: 0.75rem;
+            color: #718096;
+            margin-bottom: 8px;
+            flex-grow: 1;
             line-height: 1.3;
         }
-        
-        .app-description {
-            font-size: 0.8rem;
-            color: #718096;
-            margin-bottom: 10px;
-            flex-grow: 1;
-            line-height: 1.4;
-        }
-        
-        .btn {
+
+        .compact-btn {
             display: inline-block;
             background: #667eea;
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
             transition: background 0.3s ease;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-top: auto;
         }
-        
-        .btn:hover {
+
+        .compact-btn:hover {
             background: #5a67d8;
         }
         
@@ -263,74 +257,16 @@
             background-position: center;
         }
 
-        .apps-section {
-            grid-column: 1 / -1;
-        }
-
-        .apps-container {
+        .bottom-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .compact-app-card {
-            background: #f7fafc;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .compact-app-card:hover {
-            background: #edf2f7;
-            transform: translateY(-3px);
-        }
-
-        .compact-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
-            margin: 0 auto 8px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            flex-shrink: 0;
-        }
-
-        .compact-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            line-height: 1.2;
-        }
-
-        .compact-description {
-            font-size: 0.75rem;
-            color: #718096;
-            margin-bottom: 8px;
-            flex-grow: 1;
-            line-height: 1.3;
-        }
-
-        .compact-btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
-            font-size: 0.8rem;
-            margin-top: auto;
-        }
-
-        .compact-btn:hover {
-            background: #5a67d8;
+        @media (max-width: 768px) {
+            .bottom-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -351,7 +287,7 @@
                 <p>Сегодня мы продолжаем развивать наши приложения, добавляя новые функции и улучшая пользовательский опыт. Наша цель — создавать инструменты, которые действительно помогают людям в повседневной жизни.</p>
             </div>
             
-            <div class="card apps-section">
+            <div class="card">
                 <h2>Наши приложения</h2>
                 <div class="apps-container">
                     <div class="compact-app-card">
@@ -391,48 +327,50 @@
                 </div>
             </div>
             
-            <div class="card">
-                <h2>Политики конфиденциальности</h2>
-                <p>Мы серьезно относимся к защите ваших данных. Ознакомьтесь с нашими политиками конфиденциальности:</p>
-                
-                <div class="policy-links">
-                    <a href="policy.html" class="policy-link">
-                        <i>🔮</i> Гадания Онлайн: Предсказания
-                    </a>
-                    <a href="policyen.html" class="policy-link">
-                        <i>📊</i> Калькуляторы (Loan Calculator & Deposit Calculator)
-                    </a>
-                    <a href="policyTimeLine.html" class="policy-link">
-                        <i>⏱️</i> TimeLine
-                    </a>
-                    <a href="policyDreamDecoder.html" class="policy-link">
-                        <i>🔮</i> Сонник
-                    </a>
+            <div class="bottom-cards">
+                <div class="card">
+                    <h2>Политики конфиденциальности</h2>
+                    <p>Мы серьезно относимся к защите ваших данных. Ознакомьтесь с нашими политиками конфиденциальности:</p>
+                    
+                    <div class="policy-links">
+                        <a href="policy.html" class="policy-link">
+                            <i>🔮</i> Гадания Онлайн: Предсказания
+                        </a>
+                        <a href="policyen.html" class="policy-link">
+                            <i>📊</i> Калькуляторы (Loan Calculator & Deposit Calculator)
+                        </a>
+                        <a href="policyTimeLine.html" class="policy-link">
+                            <i>⏱️</i> TimeLine
+                        </a>
+                        <a href="policyDreamDecoder.html" class="policy-link">
+                            <i>🔮</i> Сонник
+                        </a>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="card">
-                <h2>Свяжитесь с нами</h2>
-                <p>Есть вопросы, предложения или отзывы? Мы будем рады услышать вас!</p>
                 
-                <form id="feedback-form">
-                    <div class="form-group">
-                        <label for="name">Ваше имя</label>
-                        <input type="text" id="name" placeholder="Как к вам обращаться?">
-                    </div>
+                <div class="card">
+                    <h2>Свяжитесь с нами</h2>
+                    <p>Есть вопросы, предложения или отзывы? Мы будем рады услышать вас!</p>
                     
-                    <div class="form-group">
-                        <label for="email">Ваш email</label>
-                        <input type="email" id="email" placeholder="Для ответа на ваше сообщение">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Сообщение</label>
-                        <textarea id="message" placeholder="Что вы хотите нам сообщить?"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить сообщение</button>
-                </form>
+                    <form id="feedback-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Как к вам обращаться?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Ваш email</label>
+                            <input type="email" id="email" placeholder="Для ответа на ваше сообщение">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" placeholder="Что вы хотите нам сообщить?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Отправить сообщение</button>
+                    </form>
+                </div>
             </div>
         </div>
         
