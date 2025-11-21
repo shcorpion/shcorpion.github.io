@@ -86,8 +86,8 @@
         
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
         
@@ -97,6 +97,9 @@
             padding: 15px;
             text-align: center;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .app-card:hover {
@@ -105,16 +108,17 @@
         }
         
         .app-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             margin: 0 auto 10px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            flex-shrink: 0;
         }
 
-         .loan-icon {
+        .loan-icon {
             background-image: url('images/loan-icon.png');
         }
         
@@ -130,30 +134,36 @@
             background-image: url('images/timeline-icon.png');
         }
 
-         .dreamdecoder-icon {
+        .dreamdecoder-icon {
             background-image: url('images/dreamdecoder-icon.png');
         }
         
         .app-title {
             font-weight: bold;
             margin-bottom: 5px;
+            font-size: 0.95rem;
+            line-height: 1.3;
         }
         
         .app-description {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #718096;
             margin-bottom: 10px;
+            flex-grow: 1;
+            line-height: 1.4;
         }
         
         .btn {
             display: inline-block;
             background: #667eea;
             color: white;
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 500;
             transition: background 0.3s ease;
+            font-size: 0.85rem;
+            margin-top: auto;
         }
         
         .btn:hover {
@@ -252,6 +262,76 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        .apps-section {
+            grid-column: 1 / -1;
+        }
+
+        .apps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .compact-app-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .compact-app-card:hover {
+            background: #edf2f7;
+            transform: translateY(-3px);
+        }
+
+        .compact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            margin: 0 auto 8px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .compact-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .compact-description {
+            font-size: 0.75rem;
+            color: #718096;
+            margin-bottom: 8px;
+            flex-grow: 1;
+            line-height: 1.3;
+        }
+
+        .compact-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            font-size: 0.8rem;
+            margin-top: auto;
+        }
+
+        .compact-btn:hover {
+            background: #5a67d8;
+        }
     </style>
 </head>
 <body>
@@ -271,42 +351,42 @@
                 <p>Сегодня мы продолжаем развивать наши приложения, добавляя новые функции и улучшая пользовательский опыт. Наша цель — создавать инструменты, которые действительно помогают людям в повседневной жизни.</p>
             </div>
             
-            <div class="card">
+            <div class="card apps-section">
                 <h2>Наши приложения</h2>
-                <div class="apps-grid">
-                    <div class="app-card">
-                        <div class="app-icon loan-icon"></div>
-                        <div class="app-title">Кредитный Калькулятор</div>
-                        <div class="app-description">Самый лёгкий простой и удобный, более 1М загрузок!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.crca" class="btn">Скачать</a>
+                <div class="apps-container">
+                    <div class="compact-app-card">
+                        <div class="compact-icon loan-icon"></div>
+                        <div class="compact-title">Кредитный Калькулятор</div>
+                        <div class="compact-description">Самый лёгкий простой и удобный, более 1М загрузок!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.crca" class="compact-btn">Скачать</a>
                     </div>
                     
-                    <div class="app-card">
-                        <div class="app-icon deposit-icon"></div>
-                        <div class="app-title">Калькулятор Вкладов</div>
-                        <div class="app-description">Расчет доходности по вкладам!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.dps" class="btn">Скачать</a>
+                    <div class="compact-app-card">
+                        <div class="compact-icon deposit-icon"></div>
+                        <div class="compact-title">Калькулятор Вкладов</div>
+                        <div class="compact-description">Расчет доходности по вкладам!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.dps" class="compact-btn">Скачать</a>
                     </div>
                     
-                    <div class="app-card">
-                        <div class="app-icon fortune-icon"></div>
-                        <div class="app-title">Гадания Онлайн</div>
-                        <div class="app-description">Предсказания и гадания на каждый день!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.fortuneteller" class="btn">Скачать</a>
+                    <div class="compact-app-card">
+                        <div class="compact-icon fortune-icon"></div>
+                        <div class="compact-title">Гадания Онлайн</div>
+                        <div class="compact-description">Предсказания и гадания на каждый день!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.fortuneteller" class="compact-btn">Скачать</a>
                     </div>
                     
-                    <div class="app-card">
-                        <div class="app-icon timeline-icon"></div>
-                        <div class="app-title">TimeLine</div>
-                        <div class="app-description">Знаменитая игра теперь в смартфоне!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.timeline" class="btn">Скачать</a>
+                    <div class="compact-app-card">
+                        <div class="compact-icon timeline-icon"></div>
+                        <div class="compact-title">TimeLine</div>
+                        <div class="compact-description">Знаменитая игра теперь в смартфоне!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.timeline" class="compact-btn">Скачать</a>
                     </div>
 
-                     <div class="app-card">
-                        <div class="app-icon dreamdecoder-icon"></div>
-                        <div class="app-title">Сонник</div>
-                        <div class="app-description">Узнайте значения ваших снов!</div>
-                        <a href="https://play.google.com/store/apps/details?id=ru.mob.dreamdecoder" class="btn">Скачать</a>
+                    <div class="compact-app-card">
+                        <div class="compact-icon dreamdecoder-icon"></div>
+                        <div class="compact-title">Сонник</div>
+                        <div class="compact-description">Узнайте значения ваших снов!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.dreamdecoder" class="compact-btn">Скачать</a>
                     </div>
                 </div>
             </div>
@@ -325,7 +405,7 @@
                     <a href="policyTimeLine.html" class="policy-link">
                         <i>⏱️</i> TimeLine
                     </a>
-                     <a href="policyDreamDecoder.html" class="policy-link">
+                    <a href="policyDreamDecoder.html" class="policy-link">
                         <i>🔮</i> Сонник
                     </a>
                 </div>
