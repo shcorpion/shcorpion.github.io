@@ -80,7 +80,7 @@
         
         .apps-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -130,6 +130,12 @@
 
         .dreamdecoder-icon {
             background-image: url('images/dreamdecoder-icon.png');
+        }
+
+        .uppercut-icon {
+            font-size: 30px;
+            line-height: 45px;
+            text-align: center;
         }
 
         .compact-title {
@@ -264,6 +270,10 @@
         }
 
         @media (max-width: 768px) {
+            .apps-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .bottom-cards {
                 grid-template-columns: 1fr;
             }
@@ -323,6 +333,13 @@
                         <div class="compact-title">Сонник</div>
                         <div class="compact-description">Узнайте значения ваших снов!</div>
                         <a href="https://play.google.com/store/apps/details?id=ru.mob.dreamdecoder" class="compact-btn">Скачать</a>
+                    </div>
+
+                    <div class="compact-app-card">
+                        <div class="compact-icon uppercut-icon">🥊</div>
+                        <div class="compact-title">Uppercut: Punch Power</div>
+                        <div class="compact-description">Измерьте силу удара и станьте лучшим в общем рейтинге!</div>
+                        <a href="https://play.google.com/store/apps/details?id=ru.mob.uppercutpunch" class="compact-btn">Скачать</a>
                     </div>
                 </div>
             </div>
